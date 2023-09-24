@@ -1,4 +1,4 @@
-package com.example.imagesearch.network
+package com.example.imagesearch.network.model
 
 data class PixabayResponse(
     val hits: List<Hit>,

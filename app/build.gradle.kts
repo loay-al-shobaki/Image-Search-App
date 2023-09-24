@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -66,4 +68,49 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    //navigation
+    implementation ("androidx.navigation:navigation-compose:2.4.1")
+
+
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4")
+
+    // Coroutine Lifecycle Scopes
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
+    //Dagger - Hilt
+
+    //Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.44.2")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0")
+
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0")
+
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+
+    // Coil
+    implementation ("io.coil-kt:coil-compose:1.4.0")
+
+    // system ui controller
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.17.0")
+
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
 }
